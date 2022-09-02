@@ -100,47 +100,11 @@
                     <execution>
                         <id>copy-and-filter-allatori-config</id>
                         <phase>package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
                         <configuration>
                             <outputDirectory>${basedir}/target</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/allatori</directory>
-                                    <includes>
-                                        <include>allatori.xml</include>
-                                    </includes>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <id>run-allatori</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executable>java</executable>
-                    <arguments>
-                        <argument>-Xms128m</argument>
-                        <argument>-Xmx512m</argument>
-                        <argument>-jar</argument>
-                        <argument>${basedir}/lib/allatori.jar</argument>
-                        <argument>${basedir}/target/allatori.xml</argument>
-                    </arguments>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -184,12 +148,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.allatori</groupId>
-            <artifactId>allatori-annotations</artifactId>
-            <version>8.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>com.jeff_media</groupId>
             <artifactId>JeffLib</artifactId>
             <version>10.0.0</version>
@@ -199,12 +157,6 @@
             <groupId>com.jeff_media</groupId>
             <artifactId>StandalonePluginScreen</artifactId>
             <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.jeff_media</groupId>
-            <artifactId>Stepsister</artifactId>
-            <version>12.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

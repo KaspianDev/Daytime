@@ -7,7 +7,6 @@ import com.jeff_media.jefflib.JeffLib;
 import com.jeff_media.updatechecker.UpdateCheckSource;
 import com.jeff_media.updatechecker.UpdateChecker;
 import com.jeff_media.updatechecker.UserAgentBuilder;
-import de.jeff_media.daddy.Stepsister;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -26,8 +25,6 @@ public final class Daytime extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Stepsister.init(this);
-        Stepsister.createVerificationFile();
         JeffLib.enableNMS();
         PaperCommandManager acf = new PaperCommandManager(this);
         acf.registerCommand(new MainCommand());
